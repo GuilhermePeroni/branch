@@ -1,3 +1,8 @@
+Primeiro passo ao usar o Git pela primeira vez: 
+
+Git Config --global user.email "seu-email"
+Git Config --global user.name "seu-nome"
+
 Iniciando repositório na maquina e subindo para o git hub:
 
 git init                                                   >   Inicia o repositório;
@@ -6,3 +11,27 @@ git commit -a -m "mensagem"            >   Envia uma mensagem sobre a alteraçã
 git branch -M main                              >   Cria uma ramificação principal onde será armazenado os arquivos;
 git remote add origin "https do git"    >   Vincula ao acesso remoto;
 git push -u origin main                        >   Sobe os arquivos para o a área remota.
+
+Up e Down ao servidor remoto:
+
+git push para enviar
+git pull para receber
+
+remover, realocar e renomear arquivos:
+
+git rm "nome do arquivo e sua extensão" rm= remove
+
+git mv "nome do arquivo" -> "pasta desejada" mv= move
+
+git  mv "pasta/arquivo" -> "pasta/nome_do_arquivo_renomeado" 
+
+ignorar arquivos que são gerados automaticamente ou arquivos sensíveis:
+
+criar uma pasta .gitignore onde nela adicionar as pastar/arquivos que irão ser ignorados.
+apenas os arquivos adicionados após a pasta irão ser ignorados, para que os existentes funcionem 
+terá que apagar e restaurar pelo oque eu entendi até o momento.
+
+para resetar algo que já não faz mais sentido para o projeto:
+
+git reset --hard = com está flag você força o sistema a resetar o repositório
+
