@@ -1,0 +1,8 @@
+Iniciando repositório na maquina e subindo para o git hub:
+
+git init                                                   >   Inicia o repositório;
+git add .                                                >   Adiciona os arquivos ao repositório;
+git commit -a -m "mensagem"            >   Envia uma mensagem sobre a alteração;
+git branch -M main                              >   Cria uma ramificação principal onde será armazenado os arquivos;
+git remote add origin "https do git"    >   Vincula ao acesso remoto;
+git push -u origin main                        >   Sobe os arquivos para o a área remota.
