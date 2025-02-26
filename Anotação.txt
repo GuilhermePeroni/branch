@@ -134,3 +134,50 @@ Utilizando stash (esconderijo)
     2.4. O código será jogado numa lixeira que poderá ser recuperado depois;
 
 3. O comando git stash desfaz o trabalho "errado" e coloca no stash do git.
+
+Recuperando stash:
+
+1. O comando git stash salva uma stash;
+
+2. Verifico outras abordagens de código com o comando git stash list;
+
+3. Recupero abordagens com o comando git stash apply <id>
+
+    3.1. Esse <id> é o número da lista lá do comando git stash list
+
+4. Com esses comandos podemos continuar de onde o projeto parou;
+
+5. O comando permite escolher a melhor abordagem de código;
+
+6. O comando git stash show -p <id>, permite:
+
+    6.1. Verificar o que foi modificado no código;
+
+Removendo stash: 
+
+1. Para remover todas as stash usa o comando git stash clear;
+
+2. Para remover uma stash específica usa o comando git stash drop <id>
+
+    2.1. Esse <id> você verifica com o comando git stash list
+
+3. Tomar cuidado para não perder código;
+
+4. Usar esse comando com muita certeza do que faz;
+
+5. Ver a melhor abordagem:
+
+    5.1. É melhor criar uma branch para o código em desenvolvimento?
+
+    5.2. É melhor colocar numa stash?
+
+    5.3. Vai deletar a branch e criar outra com o mesmo nome?
+
+6. Em fim... Analise com calma!
+
+Criando Tags, Alterações e Enviando ao repositório:
+
+1. para criar tags usamos git tag -a <Nome> -m <msg>;
+2. a tag serve como um checkpoint de um branch;
+3. usada para marcar estágios de um desenvolvimento;
+4. é interessante commitar apos criar uma tag.
