@@ -175,9 +175,18 @@ Removendo stash:
 
 6. Em fim... Analise com calma!
 
-Criando Tags, Alterações e Enviando ao repositório:
+Criando Tags;
 
 1. para criar tags usamos git tag -a <Nome> -m <msg>;
 2. a tag serve como um checkpoint de um branch;
 3. usada para marcar estágios de um desenvolvimento;
-4. é interessante commitar apos criar uma tag.
+4. é interessante commitar apos criar uma tag;
+5. git tag para ver as tags criadas.
+
+Alterando tags:
+
+1. Verifica tags com o comando git show <nome>;
+2. Trocamos de tags com o comando git checkout <nome>;
+    2.1. Permite retroceder e avançar em checkpoints de um branch;
+3. É mais interessante que as stash para ficar avançando e retrocedendo pontos do código;
+4. São bem úteis no dia a dia.
