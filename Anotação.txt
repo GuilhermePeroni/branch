@@ -12,18 +12,20 @@ git branch -M main                              >   Cria uma ramificação princ
 git remote add origin "https do git"    >   Vincula ao acesso remoto;
 git push -u origin main                        >   Sobe os arquivos para o a área remota.
 
+git log = usado para ver os commits feitos por quem e quando.
+
 Up e Down ao servidor remoto:
 
-git push para enviar
-git pull para receber
+git push para enviar;
+git pull para receber.
 
 remover, realocar e renomear arquivos:
 
-git rm "nome do arquivo e sua extensão" rm= remove
+git rm "nome do arquivo e sua extensão" rm= remove;
 
-git mv "nome do arquivo" -> "pasta desejada" mv= move
+git mv "nome do arquivo" -> "pasta desejada" mv= move;
 
-git  mv "pasta/arquivo" -> "pasta/nome_do_arquivo_renomeado" 
+git  mv "pasta/arquivo" -> "pasta/nome_do_arquivo_renomeado" .
 
 ignorar arquivos que são gerados automaticamente ou arquivos sensíveis:
 
@@ -31,7 +33,104 @@ criar uma pasta .gitignore onde nela adicionar as pastar/arquivos que irão ser 
 apenas os arquivos adicionados após a pasta irão ser ignorados, para que os existentes funcionem 
 terá que apagar e restaurar pelo oque eu entendi até o momento.
 
+
+ESTUDAR NOVAMENTE AULA 31 DESFAZENDO ALTERAÇÕES E 33 GIT RESET
+
 para resetar algo que já não faz mais sentido para o projeto:
 
-git reset --hard = com está flag você força o sistema a resetar o repositório
+git reset --hard = com está flag você força o sistema a resetar o repositório.
 
+Criando Branchs:
+
+git branch = mostra todas as ramificações e em qual você está;
+
+git branch "arquivo" = cria uma nova ramificação.
+
+Deletando Branch (ramificação):
+
+não é comum deletar um branch, normalmente é guardado como histórico de trabalho, salvo 
+quando criado errado;
+
+comando git branch -d (nome do arquivo) ou git branch --delete (nome do arquivo).
+
+Mudando de Branch:
+
+1. Mudar de branch com o comando git checkout <nome da branch>;
+
+2. Criar e mudar para uma nova branch com comando git checkout -b <nome da branch>;
+
+3. Muda-se de branch para não "sujar" a branch master;
+
+4. Desenvolve em outro branch e depois unir as modificações com a master;
+
+5. Mudar de branch, pode levar alterações que não foram comitadas junto. Tome cuidado;
+
+6. Se alterar arquivos -> não comitar -> mudar de branch:
+
+    6.1. Os arquivos não comitados irão para branch nova e na antiga serão apagados;
+
+7. Ficar de olho no git status quando for mudar de branch;
+
+8. Porque criar branches?
+
+    8.1. Não queremos mesclar o código com a main;
+
+    8.2. Queremos validar primeiro, antes de levar atualizações para a branch de origem;
+
+9. Sempre comitar antes de mudar de branch;
+
+10. Lembrando:
+
+    10.1. Criar uma nova branch com base na branch atual com o comando:
+
+    10.2. git checkout -b <nome da branch>
+
+11. Boas práticas:
+
+    11.1. Comitar tudo;
+
+    11.2. Sair do branch atual;
+
+    11.3. Voltar para a master/origem;
+
+    11.4. Fazer um git pull;
+
+    11.5. Usar o git checkout -b <nome da nova branch> ------> Cópia da Master.
+
+    Unindo Branch:
+
+    1. Unir branches com o comando git merge <nome da branch>;
+
+2. É por meio de "merges" que recebemos atualizações de outros devs;
+
+3. O branch atual se une com o branch escolhido;
+
+4. O Tech Lead usa esse recurso para atualizar a master;
+
+5. Se não sou responsável pelo projeto, devo:
+
+    5.1. Atualizar o meu branch com a master (Versão atual do projeto);
+
+    5.2. Usa-se o comando git merge master;
+
+6. Nunca dá um merge na branch master com outro branch;
+
+7. Dificilmente vamos atualizar o nosso repositório usando a master;
+
+8. Tomar cuidado! Não atualizar a master diretamente com um git push;
+
+Utilizando stash (esconderijo)
+
+1. Recomeço um trabalho utilizando o comado git stash;
+
+2. A situação é a seguinte:
+
+    2.1. Quando desenvolvo uma solução e está no caminho errado;
+
+    2.2. Não desejo apagar tudo de novo e quero recomeçar;
+
+    2.3. Usar o comando git stash;
+
+    2.4. O código será jogado numa lixeira que poderá ser recuperado depois;
+
+3. O comando git stash desfaz o trabalho "errado" e coloca no stash do git.
