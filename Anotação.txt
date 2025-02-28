@@ -134,3 +134,98 @@ Utilizando stash (esconderijo)
     2.4. O código será jogado numa lixeira que poderá ser recuperado depois;
 
 3. O comando git stash desfaz o trabalho "errado" e coloca no stash do git.
+
+Recuperando stash:
+
+1. O comando git stash salva uma stash;
+
+2. Verifico outras abordagens de código com o comando git stash list;
+
+3. Recupero abordagens com o comando git stash apply <id>
+
+    3.1. Esse <id> é o número da lista lá do comando git stash list
+
+4. Com esses comandos podemos continuar de onde o projeto parou;
+
+5. O comando permite escolher a melhor abordagem de código;
+
+6. O comando git stash show -p <id>, permite:
+
+    6.1. Verificar o que foi modificado no código;
+
+Removendo stash: 
+
+1. Para remover todas as stash usa o comando git stash clear;
+
+2. Para remover uma stash específica usa o comando git stash drop <id>
+
+    2.1. Esse <id> você verifica com o comando git stash list
+
+3. Tomar cuidado para não perder código;
+
+4. Usar esse comando com muita certeza do que faz;
+
+5. Ver a melhor abordagem:
+
+    5.1. É melhor criar uma branch para o código em desenvolvimento?
+
+    5.2. É melhor colocar numa stash?
+
+    5.3. Vai deletar a branch e criar outra com o mesmo nome?
+
+6. Em fim... Analise com calma!
+
+Criando Tags;
+
+1. para criar tags usamos git tag -a <Nome> -m <msg>;
+2. a tag serve como um checkpoint de um branch;
+3. usada para marcar estágios de um desenvolvimento;
+4. é interessante commitar apos criar uma tag;
+5. git tag para ver as tags criadas.
+
+Alterando tags:
+
+1. Verifica tags com o comando git show <nome>;
+2. Trocamos de tags com o comando git checkout <nome>;
+    2.1. Permite retroceder e avançar em checkpoints de um branch;
+3. É mais interessante que as stash para ficar avançando e retrocedendo pontos do código;
+4. São bem úteis no dia a dia.
+
+Encontrando Branches:
+
+1. Branches são criados a todo tempo;
+
+2. Para ter acesso a branches no repositório remoto usamos:
+    2.1. git fetch -a
+    2.2. Esse comando atualiza todos o branches e tags ainda não reconhecido por você;
+
+3. Útil para utilizar o branch de outro dev do time;
+
+4. Fluxo Resumido:
+
+    4.1. Outro Dev cria um branch e envia para o repositório;
+    4.2. Eu faço um git fetch -a para ver as branches criadas no repositório;
+    4.3. Eu acesso as branches e faço as alterações necessárias;
+    4.4. Faço um git push e comunico o meu colega;
+    4.5. Meu colega acessa o repositório e faz um git pull para ver as atualizações que fiz;
+
+5. Lembrar que ao criar uma branch devemos:
+    5.1. Ficar atento as alterações com git status;
+    5.2. Fazer o commit das alterações
+    5.3. Enviar para o repositório com git push após tudo está "ok".
+
+Criando submodules:
+
+1. Ter dois ou mais projetos em um só repositório;
+2. Podemos adicionar dependências do projeto atual mantendo as estruturas separadas;
+3. Comando para adicionar submodules no repositório:
+    3.1. git submodules add <repo>
+4. Comando para verificar se há submodules:
+    4.1. git submudules
+5. Fluxo de Entendimento:
+    5.1. Imagine você fazer vários cursos na Udemy;
+    5.2. Você cria um repositório para estudar os cursos da Udemy;
+    5.3. Então, você pode criar submodules específicos para cada curso;
+    5.4. Mas, tudo ficará num repositório só, que poderia ser chamado de udemy;
+git s
+    
