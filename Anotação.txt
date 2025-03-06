@@ -227,5 +227,66 @@ Criando submodules:
     5.2. Você cria um repositório para estudar os cursos da Udemy;
     5.3. Então, você pode criar submodules específicos para cada curso;
     5.4. Mas, tudo ficará num repositório só, que poderia ser chamado de udemy;
-git s
-    
+
+    Atualizando submodules:
+
+1. Devemos comitar as mudanças realizadas nos "submodules";
+2. Para enviar arquivos para o repositório que está no submodule, usamos:
+    2.1. git push --recurse-submodules=on-demand;
+3. Para receber arquivos no repositorio local, usamos:
+    3.1. git pull    
+
+   Para exibir diferenças de branchs, usar o comando:
+
+1. git diff
+2. O comando git diff quanto utilizado exibe as diferenças do branch atual com o remoto;
+3. Podemos verificar a diferença entre arquivos através do comando:
+    3.1. git diff <arquivo1> <arquivo2>
+    3.2. É menos utilizado;
+4. Não precisa nem comitar para que seja exibida a diferença;
+5. Se estiver dentro da branch1, e quiser ver a diferença na branch2, faz-se:
+    5.1. git diff branch2
+6. Lembrando:
+    6.1. Para acessar uma branch você usa o comando git checkout <nome da branch>
+7. Quando você faz um merge entre dois arquivos, o git diff não mostra resultados;
+    7.1. Isso porque os dois arquivos estão iguais após o merge;
+8. Para comparar arquivos entre si, e vê suas diferenças, usa-se o comando:
+    8.1. git diff HEAD: <arquivo1> <arquivo1>
+    8.2. Perceber que o comado acima checa a versão antiga com a atual do mesmo arquivo
+
+Para dar um log resumido no projeto usamos o comando:
+
+    1. git shortlog
+    1.1. Quando você passa alguns dias sem ver o projeto e muita coisa já aconteceu;
+    1.2. Para você acompanhar algumas alterações;
+2. Cada commit tem o nome do autor para visualizar;
+3. Para ver quais commits foram enviados ao projeto e por quem;
+4. Esse comando não tem nada haver com branch e sim com o repositório;
+
+Para limpar arquivos não trakeados, usamos o comando:
+
+    1.1. git clean
+    1.2. Exemplos de uso, seria para limpar imagens que não usa mais no projeto;
+    1.3. Algum arquivo que foi colocado "sem querer" no projeto;
+2. Todos que você não usou o git add;
+3. Para arquivos que são gerados automaticamente;
+4. As vezes por questão de segurança o git não permite usar o git clean;
+    4.1. Se tiver certeza do que está fazendo, pode usar o comando git clean -f;
+    4.2. A flag -f vem de force, e o git vai executar o comando de qualquer jeito;
+5. Lembrar de comitar todos os arquivos que deseja para depois usar o comando;
+    5.1. Devemos usar o git status para ver os untraked;
+    5.2. Usar o git add para adicionar os arquivos de interesse;
+    5.3. Fazer o commit;
+    5.4. Usar o git clean para remover os arquivos desnecessários;
+
+O comado que limpa arquivos que não são necessário para nosso projeto é:
+
+1. git gc - uma abreviação para garbage collector;
+    1.1. Deixa mais performático;
+2. É um trabalho mais local, não é remoto!
+
+Pra verificar a integridade e conectividade dos arquivos usamos o comando:
+
+1. git fsck (file system check)
+2. Verificar arquivos corrompidos;
+3. Trata-se de um comando de rotina para checar a integridade do projeto;
